@@ -12,27 +12,20 @@ def create_kinship_graph():
 
     # Adding nodes for various beings
     beings = [f"Being {i}" for i in range(1, 100)] 
-    more_kin = ["Me", "You", "Humans",
-                "Hens", "Cows", "Shrimp", "Pigs",
+    more_kin = ["Me", "You", "Humans", "Hens", "Cows", "Shrimp", "Pigs",
                 "Dogs", "Cats", "Turtles", "Elephants", "Whales", "Dolphins",
                 "Octopuses", "Horses", "Sheep", "Goats",
-                "Family", "Friends",
-                "Jumbos", "Bostonians"
+                "Family", "Friends", "Jumbos", "Bostonians",
                 "Ukrainians", "Russians", "Israelis", "Palestinians",
                 "Americans", "Africans", "Germans",
-                "Jews", "Christians", "Muslims",
-                "Sentient AI", "Digital minds", 
+                "Jews", "Christians", "Muslims", "Buddhists",
+                "Sentient AI", "Digital minds",
                 "Future AI", "Future humans", "Future nonhumans",
-
-                "Chimpanzees", "Orangutans", "Gorillas",  # Other primates
-                "Squids", "Lobsters",  # Additional sea creatures
-                "Bats", "Rats",  # Other mammals and common research animals
-                "Bees",  # Insects with complex social structures and behaviors
-                "Jellyfish",  # Other beings with simple nervous systems but capable of responses
-                "Neanderthals", "Denisovans",  # Extinct human relatives
-                "Extraterrestrial beings",  # Hypothetical beings from other planets
-                "Bioengineered beings"  # Theoretical future beings created through genetic engineering
-                ]
+                "Chimpanzees", "Orangutans", "Gorillas",
+                "Squids", "Lobsters", "Bats", "Rats",
+                "Bees", "Jellyfish", "Neanderthals", "Denisovans",
+                "Extraterrestrials", "Bioengineered beings",
+                "Other beings capable of experienceing pleasure and pain"]
 
     # Adding nodes and edges
     all_kin = beings + more_kin
