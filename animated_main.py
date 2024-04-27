@@ -13,8 +13,10 @@ def create_kinship_graph():
     G = nx.Graph()
 
     # Adding nodes for various beings
-    beings = [f"Being {i}" for i in range(1, 30)]
-    more_kin = ["Me", "You", "Humans", "Hens", "Cows", "Shrimp", "Pigs",
+    # beings = [f"Being {i}" for i in range(1, 30)]
+    beings = []
+    more_kin = ["Me", "You", "Humans", "Chickens", "Cows", "Pigs",
+                "Shrimp", "Fish", "Insects?",
                 "Dogs", "Cats", "Turtles", "Elephants", "Whales", "Dolphins",
                 "Octopuses", "Horses", "Sheep", "Goats",
                 "Family", "Friends", "Jumbos", "Bostonians",
@@ -25,9 +27,12 @@ def create_kinship_graph():
                 "Future AI", "Future humans", "Future nonhumans",
                 "Chimpanzees", "Orangutans", "Gorillas",
                 "Squids", "Lobsters", "Bats", "Rats",
-                "Bees", "Jellyfish", "Neanderthals", "Denisovans",
+                "Bees", "Jellyfish", "Neanderthals",
+                "Rock climbers", "Vegans", "Vegetarians", "Meat eaters",
+                "Frisbee players", "Baseball players", "Soccer fans",
                 "Extraterrestrials", "Bioengineered beings",
-                "Other beings capable of experienceing pleasure and pain"]
+                "Other beings capable of\nexperienceing pleasure and pain",
+                "", "?", "??", "???", "????", "?????", "??????", "???????"]
 
     # Adding nodes and edges
     all_kin = beings + more_kin
@@ -56,7 +61,7 @@ def create_kinship_graph():
         nx.draw_networkx_edges(G, pos, alpha=0.05, width=0.5, ax=ax)
         labels = {node: node for node in more_kin}
         nx.draw_networkx_labels(G, pos, labels, font_size=8, font_color='black', ax=ax)
-        ax.set_title("Kinship Network Animation")
+        ax.set_title("The Complete Connected Chart Characterizing My Current Conception of Kinship")
         ax.axis('off')  # Hide axes
 
     # Create and start the animation
