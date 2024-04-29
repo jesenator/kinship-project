@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 import random
+import time
 
 def random_color():
     """Generate a random color in hexadecimal format."""
@@ -46,11 +47,22 @@ def create_kinship_graph():
     pos = nx.spring_layout(G)  # Initial layout
     fig, ax = plt.subplots(figsize=(10, 8))
 
+    start_time = time.time()
+
     def update(frame):
-        # Update node positions
-        for node in pos:
-            move_val = 0.05
-            pos[node] += np.random.rand(2) * move_val - move_val / 2
+        nonlocal pos, start_time
+
+        elapsed_time = time.time() - start_time
+
+        if elapsed_time >= 10:  # Reset positions every 10 seconds
+            pos = nx.spring_layout(G)  # Reset positions
+            start_time = time.time()  # Restart timer
+
+        else:
+            # Update node positions by slightly moving them
+            for node in pos:
+                move_val = 0.05
+                pos[node] += np.random.rand(2) * move_val - move_val / 2
 
         ax.clear()
         node_sizes = [G.nodes[node]['size']*20 for node in G.nodes]
